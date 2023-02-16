@@ -7,12 +7,12 @@ const connect = function () {
     port: "50541",
   });
 
-  conn.on("data", (messageFromTheServer) => {
-    console.log(messageFromTheServer);
-  });
-
   conn.on("data", () => {
     console.log("Successfully connected to game server")
+  });
+
+  conn.on("data", (messageFromTheServer) => {
+    console.log(messageFromTheServer);
   });
 
   conn.on("connect", () => {
